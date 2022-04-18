@@ -1,4 +1,9 @@
 {
+<<<<<<< HEAD
+  "dependencies": {
+    "express-generator": "^4.2.0",
+    "mkdirp": "^1.0.4"
+=======
   "name": "javascript-note-api",
   "version": "0.0.0",
   "private": true,
@@ -19,5 +24,6 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
+>>>>>>> 503fb38473c7d1d4c59f63c03de28f05433a9def
   }
 }
