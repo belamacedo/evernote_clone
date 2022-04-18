@@ -1,6 +1,27 @@
 {
+<<<<<<< HEAD
   "dependencies": {
     "express-generator": "^4.2.0",
     "mkdirp": "^1.0.4"
+=======
+  "name": "javascript-note-api",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "express": "^4.17.3",
+    "mongoose": "^6.3.0",
+    "morgan": "^1.10.0",
+    "serve-favicon": "~2.4.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+>>>>>>> 503fb38473c7d1d4c59f63c03de28f05433a9def
   }
 }
