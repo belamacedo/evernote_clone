@@ -1,5 +1,12 @@
-import React from "react";
+import React, { Fragment } from "react";
+import { Notification, Section } from "rbx";
+import "./App.scss";
+import Header from "./assets/components/Header";
 
-const App = () => <p>Javascript Notes</p>;
+const App = () => (
+	<Fragment>
+		<Header />
+	</Fragment>
+);
 
 export default App;
