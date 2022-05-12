@@ -6,6 +6,8 @@ var bodyParser = require('body-parser');
 require('./config/database');
 
 var usersRouter = require('./app/routes/users');
+var notesRouter = require('./app/routes/notes');
+
 
 var app = express();
 
@@ -21,6 +23,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/users', usersRouter);
+app.use('/notes', notesRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
