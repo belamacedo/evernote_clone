@@ -6,11 +6,7 @@ import "../../styles/header.scss";
 function Header() {
 	return (
 		<Navbar>
-			{" "}
-			 
 			<Container>
-				{" "}
-				   
 				<Navbar.Brand>
 					     <img src={logoImage} alt="Logo" />     
 					<Navbar.Burger
@@ -22,7 +18,7 @@ function Header() {
 						       <span aria-hidden="true"></span>       
 						<span aria-hidden="true"></span>       
 						<span aria-hidden="true"></span>     
-					</Navbar.Burger>{" "}
+					</Navbar.Burger>
 					   
 				</Navbar.Brand>
 				   
@@ -34,9 +30,9 @@ function Header() {
 						align="right"
 					>
 						      Item 1      
-					</Navbar.Segment>
+					</Navbar.Segment>{" "}
 					   
-				</Navbar.Menu>
+				</Navbar.Menu>{" "}
 				 
 			</Container>
 		</Navbar>
