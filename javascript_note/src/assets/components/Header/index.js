@@ -34,7 +34,7 @@ function Header() {
 							<Column>
 								<Link
 									to="/register"
-									className="button is-white has-text-custom-purple"
+									className="button has-text-custom-purple is-white "
 								>
 									Register
 								</Link>
