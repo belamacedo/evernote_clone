@@ -19,7 +19,7 @@ function RegisterForm() {
 	const [redirectToLogin, setRedirectToLogin] = useState(false);
 	const [error, setError] = useState(false);
 
-	const HandleSubmit = async (evt) => {
+	const handleSubmit = async (evt) => {
 		evt.preventDefault();
 		try {
 			const user = await UsersService.register({
@@ -33,12 +33,12 @@ function RegisterForm() {
 		}
 	};
 
-	if (redirectToLogin == true) return <Navigate to={{ pathname: '/login' }} />;
+	if (redirectToLogin === true) return <Navigate to={{ pathname: '/login' }} />;
 
 	return (
 		<Fragment>
 			<Column.Group centered>
-				<form onSubmit={HandleSubmit}>
+				<form onSubmit={handleSubmit}>
 					<Column size={12}>
 						<Field>
 							<Label size='small'>Name:</Label>
@@ -77,21 +77,23 @@ function RegisterForm() {
 							</Control>
 						</Field>
 						<Field>
-							<Column.Group breakpoint='mobile'>
-								<Column>
-									<a
-										className='button is-white has-text-custom-purple'
-										onClick={(e) => setRedirectToLogin(true)}
-									>
-										Login or{' '}
-									</a>
-								</Column>
-								<Column>
-									<Button color='custom-purple' outlined>
-										Register
-									</Button>
-								</Column>
-							</Column.Group>
+							<Control>
+								<Column.Group breakpoint='mobile'>
+									<Column>
+										<a
+											className='button is-white has-text-custom-purple'
+											onClick={(e) => setRedirectToLogin(true)}
+										>
+											Login or{' '}
+										</a>
+									</Column>
+									<Column>
+										<Button color='custom-purple' outlined>
+											Register
+										</Button>
+									</Column>
+								</Column.Group>
+							</Control>
 						</Field>
 						{error && <Help color='danger'>Email or Password invalid.</Help>}
 					</Column>
