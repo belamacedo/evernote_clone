@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState } from 'react';
 import {
 	Button,
 	Field,
@@ -8,77 +8,92 @@ import {
 	Section,
 	Help,
 	Label,
-} from "rbx";
-import { Navigate } from "react-router-dom";
+} from 'rbx';
+import { Navigate } from 'react-router-dom';
+import UsersService from '../../../../services/users';
 
 function RegisterForm() {
-	const [name, setName] = useState("");
-	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
+	const [name, setName] = useState('');
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
 	const [redirectToLogin, setRedirectToLogin] = useState(false);
 	const [error, setError] = useState(false);
 
-	if (redirectToLogin == true) return <Navigate to={{ pathname: "/login" }} />;
+	const HandleSubmit = async (evt) => {
+		evt.preventDefault();
+		try {
+			const user = await UsersService.register({
+				name: name,
+				email: email,
+				password: password,
+			});
+			setRedirectToLogin(true);
+		} catch (error) {
+			setError(true);
+		}
+	};
+
+	if (redirectToLogin == true) return <Navigate to={{ pathname: '/login' }} />;
 
 	return (
 		<Fragment>
 			<Column.Group centered>
-				<form>
+				<form onSubmit={HandleSubmit}>
 					<Column size={12}>
 						<Field>
-							<Label size="small">Name:</Label>
+							<Label size='small'>Name:</Label>
 							<Control>
 								<Input
-									type="name"
+									type='name'
 									required
-									name="name"
+									name='name'
 									value={name}
 									onChange={(e) => setName(e.target.value)}
 								></Input>
 							</Control>
 						</Field>
 						<Field>
-							<Label size="small">Email:</Label>
+							<Label size='small'>Email:</Label>
 							<Control>
 								<Input
-									type="email"
+									type='email'
 									required
-									name="email"
+									name='email'
 									value={email}
 									onChange={(e) => setEmail(e.target.value)}
 								></Input>
 							</Control>
 						</Field>
 						<Field>
-							<Label size="small">Password:</Label>
+							<Label size='small'>Password:</Label>
 							<Control>
 								<Input
-									type="password"
+									type='password'
 									required
-									name="password"
+									name='password'
 									value={password}
 									onChange={(e) => setPassword(e.target.value)}
 								></Input>
 							</Control>
 						</Field>
 						<Field>
-							<Column.Group breakpoint="mobile">
+							<Column.Group breakpoint='mobile'>
 								<Column>
 									<a
-										className="button is-white has-text-custom-purple"
+										className='button is-white has-text-custom-purple'
 										onClick={(e) => setRedirectToLogin(true)}
 									>
-										Login or{" "}
+										Login or{' '}
 									</a>
 								</Column>
 								<Column>
-									<Button color="custom-purple" outlined>
+									<Button color='custom-purple' outlined>
 										Register
 									</Button>
 								</Column>
 							</Column.Group>
 						</Field>
-						{error && <Help color="danger">Email or Password invalid.</Help>}
+						{error && <Help color='danger'>Email or Password invalid.</Help>}
 					</Column>
 				</form>
 			</Column.Group>
