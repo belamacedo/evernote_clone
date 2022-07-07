@@ -1,15 +1,15 @@
-import React, { Fragment } from "react";
-import Header from "../../../components/header";
-import { Column, Section, Title, Container, Card } from "rbx";
-import logoImage from "../../../images/logo.png";
-import { ColumnGroup } from "rbx/grid/columns/column-group";
-import "../../../styles/auth.scss";
-import RegisterForm from "../../../components/auth/register_form";
+import React, { Fragment } from 'react';
+import Header from '../../../components/header';
+import { Column, Section, Title, Container, Card } from 'rbx';
+import logoImage from '../../../images/logo.png';
+import { ColumnGroup } from 'rbx/grid/columns/column-group';
+import '../../../styles/auth.scss';
+import RegisterForm from '../../../components/auth/register_form';
 
 const RegisterScreen = () => (
 	<Fragment>
 		<Header />
-		<Section size="medium" className="auth">
+		<Section size='medium' className='auth'>
 			<Container>
 				<Column.Group centered>
 					<Column size={3}>
@@ -26,7 +26,7 @@ const RegisterScreen = () => (
 										<Column size={12}>
 											<Title
 												size={6}
-												className="has-text-grey has-text-centered"
+												className='has-text-grey has-text-centered'
 											>
 												Your notes on the cloud
 											</Title>
